@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ahmed | Freelancer Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/alpinejs" defer></script>
+    <script>
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+    <style>
+      html {
+        scroll-behavior: smooth;
+      }
+      [data-aos] {
+        opacity: 0;
+        transition: all 0.8s ease-in-out;
+      }
+      [data-aos].aos-animate {
+        opacity: 1;
+        transform: none;
+      }
+    </style>
+  </head>
+  <body class="bg-gray-900 text-gray-100">
+    <!-- Navbar -->
+    <header
+      class="shadow-md sticky top-0 bg-gray-900 z-50"
+      x-data="{ open: false }"
+    >
+      <div
+        class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <h1 class="text-2xl font-bold">Ahmed</h1>
+        <nav class="space-x-4 hidden md:flex">
+          <a href="#hero" class="hover:text-indigo-400">Home</a>
+          <a href="#about" class="hover:text-indigo-400">About</a>
+          <a href="#projects" class="hover:text-indigo-400">Projects</a>
+          <a href="#services" class="hover:text-indigo-400">Services</a>
+          <a href="#testimonials" class="hover:text-indigo-400">Testimonials</a>
+          <a href="#contact" class="hover:text-indigo-400">Contact</a>
+        </nav>
+        <div class="md:hidden">
+          <button @click="open = !open" class="text-2xl">☰</button>
+        </div>
+      </div>
+      <!-- Mobile Menu -->
+      <div x-show="open" class="md:hidden px-4 pb-4">
+        <a href="#hero" class="block py-2">Home</a>
+        <a href="#about" class="block py-2">About</a>
+        <a href="#projects" class="block py-2">Projects</a>
+        <a href="#services" class="block py-2">Services</a>
+        <a href="#testimonials" class="block py-2">Testimonials</a>
+        <a href="#contact" class="block py-2">Contact</a>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="hero" class="py-20 text-center" data-aos="fade-up">
+      <h2 class="text-4xl font-bold mb-4">Hey, I'm Ahmed</h2>
+      <p class="text-xl text-gray-300 mb-6">
+        Freelance Web Developer crafting modern, responsive websites.
+      </p>
+      <a
+        href="#projects"
+        class="inline-flex items-center text-indigo-400 hover:text-indigo-600 font-semibold transition duration-300"
+      >
+        View Projects
+        <svg
+          class="w-5 h-5 ml-2 transition-transform transform group-hover:translate-x-1"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M17 8l4 4m0 0l-4 4m4-4H3"
+          ></path>
+        </svg>
+      </a>
+    </section>
+
+    <!-- Social Buttons -->
+    <section class="text-center mb-10" data-aos="fade-in">
+      <div class="flex justify-center space-x-4">
+        <a href="#" class="text-gray-400 hover:text-white text-2xl"
+          ><i class="fab fa-github">Github</i></a
+        >
+        <a href="#" class="text-blue-500 hover:text-blue-400 text-2xl"
+          ><i class="fab fa-linkedin">Linkedin</i></a
+        >
+        <a href="#" class="text-pink-400 hover:text-pink-300 text-2xl"
+          ><i class="fab fa-instagram">insta</i></a
+        >
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20" data-aos="fade-up">
+      <div name="about" class="w-full h-screen">
+        <div class="flex flex-col justify-center items-center w-full h-full">
+          <div class="max-w-[1000px] w-full grid grid-cols-2 gap-8">
+            <div class="sm:text-right pb-8 pl-4">
+              <p class="text-4xl font-bold inline border-b-4 border-indigo-600">
+                About
+              </p>
+            </div>
+            <div></div>
+          </div>
+          <div class="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
+            <div class="sm:text-right text-4xl font-bold">
+              <p>Hi, I'm Ahmed, Let's bring your ideas to life.</p>
+            </div>
+            <div>
+              <p>
+                I am a Software Engineering student at the University of
+                Agriculture, Faisalabad, specializing in web development. I am
+                passionate about building responsive and user-friendly websites
+                and applications.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-20" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="zoom-in">
+            <h3 class="text-xl font-semibold mb-2">Portfolio Website</h3>
+            <p class="mb-4 text-gray-400">
+              Personal responsive portfolio showcasing my work and skills.
+            </p>
+            <button
+              class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Live Preview
+            </button>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="zoom-in">
+            <h3 class="text-xl font-semibold mb-2">Quiz App</h3>
+            <p class="mb-4 text-gray-400">
+              A JavaScript quiz app with real-time score tracking.
+            </p>
+            <button
+              class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Live Preview
+            </button>
+          </div>
+          <div class="bg-gray-800 p-6 rounded-lg shadow-md" data-aos="zoom-in">
+            <h3 class="text-xl font-semibold mb-2">E-Commerce UI</h3>
+            <p class="mb-4 text-gray-400">
+              A responsive frontend clone of an e-commerce site.
+            </p>
+            <button
+              class="bg-indigo-600 text-white px-4 py-2 rounded hover:bg-indigo-700"
+            >
+              Live Preview
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-gray-800" data-aos="fade-up">
+      <div class="max-w-6xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-10">Services</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+          <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">Web Development</h3>
+            <p class="text-gray-400">
+              Custom websites using HTML, Tailwind, and React for any business
+              need.
+            </p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">UI Redesign</h3>
+            <p class="text-gray-400">
+              Give your existing site a modern, responsive UI redesign.
+            </p>
+          </div>
+          <div class="bg-gray-900 p-6 rounded-lg shadow-md">
+            <h3 class="text-xl font-semibold mb-2">
+              Bug Fixing & Optimization
+            </h3>
+            <p class="text-gray-400">
+              Fix layout issues and improve loading speed for better UX.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20" data-aos="fade-in">
+      <div class="max-w-4xl mx-auto px-4 text-center">
+        <h2 class="text-3xl font-bold mb-6">Testimonials</h2>
+        <p class="text-gray-400 mb-10">
+          Client feedback coming soon! Meanwhile, here’s what people say about
+          working with me:
+        </p>
+        <div class="space-y-6">
+          <div class="bg-gray-800 p-6 rounded shadow">
+            <p class="text-lg italic">
+              “Ahmed is incredibly skilled and easy to work with. Highly
+              recommend for any frontend project.”
+            </p>
+            <p class="mt-2 font-semibold">– Placeholder Client</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (from original repo layout) -->
+    <section id="contact" class="py-20 bg-gray-900" data-aos="fade-in">
+      <div class="max-w-3xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-6">Contact Me</h2>
+        <form class="space-y-6">
+          <div>
+            <label for="name" class="block text-sm font-medium text-gray-300"
+              >Name</label
+            >
+            <input
+              type="text"
+              id="name"
+              name="name"
+              class="w-full mt-1 p-2 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-sm font-medium text-gray-300"
+              >Email</label
+            >
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="w-full mt-1 p-2 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            />
+          </div>
+          <div>
+            <label for="message" class="block text-sm font-medium text-gray-300"
+              >Message</label
+            >
+            <textarea
+              id="message"
+              name="message"
+              rows="4"
+              class="w-full mt-1 p-2 rounded bg-gray-800 text-white border border-gray-700 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            ></textarea>
+          </div>
+          <div class="text-center">
+            <button
+              type="submit"
+              class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold px-6 py-2 rounded"
+            >
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-6 bg-gray-900">
+      <p class="text-gray-400">&copy; 2025 Ahmed. All rights reserved.</p>
+    </footer>
+
+    <!-- FontAwesome for Social Icons -->
+    <script
+      src="https://kit.fontawesome.com/a076d05399.js"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("aos-animate");
+          }
+        });
+      });
+      document.querySelectorAll("[data-aos]").forEach((el) => {
+        observer.observe(el);
+        el.style.transform = "translateY(60px)";
+      });
+    </script>
+  </body>
+</html>
