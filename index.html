@@ -34,11 +34,13 @@
       <div
         class="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between"
       >
-        <h1 class="text-2xl font-bold">Ahmed</h1>
+        <a href="#hero" class="pointer">
+          <img class="w-20 h-8" src="assests/logo-bg-removed.png " alt="" />
+        </a>
         <nav class="space-x-4 hidden md:flex">
           <a href="#hero" class="hover:text-indigo-400">Home</a>
           <a href="#about" class="hover:text-indigo-400">About</a>
-          <a href="#projects" class="hover:text-indigo-400">Projects</a>
+          <a href="#projects" class="hover:text-indigo-400">Portfolio</a>
           <a href="#services" class="hover:text-indigo-400">Services</a>
           <a href="#testimonials" class="hover:text-indigo-400">Testimonials</a>
           <a href="#contact" class="hover:text-indigo-400">Contact</a>
@@ -48,29 +50,64 @@
         </div>
       </div>
       <!-- Mobile Menu -->
-      <div x-show="open" class="md:hidden px-4 pb-4">
-        <a href="#hero" class="block py-2">Home</a>
-        <a href="#about" class="block py-2">About</a>
-        <a href="#projects" class="block py-2">Projects</a>
-        <a href="#services" class="block py-2">Services</a>
-        <a href="#testimonials" class="block py-2">Testimonials</a>
-        <a href="#contact" class="block py-2">Contact</a>
+      <div
+        x-show="open"
+        x-transition
+        class="md:hidden absolute top-full left-0 w-full bg-gray-900 z-40 shadow-lg"
+      >
+        <a
+          href="#hero"
+          class="block py-2 px-4 border-b border-gray-800"
+          @click="open = false"
+          >Home</a
+        >
+        <a
+          href="#about"
+          class="block py-2 px-4 border-b border-gray-800"
+          @click="open = false"
+          >About</a
+        >
+        <a
+          href="#projects"
+          class="block py-2 px-4 border-b border-gray-800"
+          @click="open = false"
+          >Portfolio</a
+        >
+        <a
+          href="#services"
+          class="block py-2 px-4 border-b border-gray-800"
+          @click="open = false"
+          >Services</a
+        >
+        <a
+          href="#testimonials"
+          class="block py-2 px-4 border-b border-gray-800"
+          @click="open = false"
+          >Testimonials</a
+        >
+        <a href="#contact" class="block py-2 px-4" @click="open = false"
+          >Contact</a
+        >
       </div>
     </header>
 
     <!-- Hero Section -->
-    <section id="hero" class="py-20 text-center" data-aos="fade-up">
+    <section
+      id="hero"
+      class="py-20 text-center scroll-mt-16"
+      data-aos="fade-up"
+    >
       <h2 class="text-4xl font-bold mb-4">Hey, I'm Ahmed</h2>
       <p class="text-xl text-gray-300 mb-6">
         Freelance Web Developer crafting modern, responsive websites.
       </p>
       <a
         href="#projects"
-        class="inline-flex items-center text-indigo-400 hover:text-indigo-600 font-semibold transition duration-300"
+        class="group inline-flex items-center text-indigo-400 hover:text-indigo-600 font-semibold transition duration-300 border border-indigo-400 hover:border-indigo-600 rounded px-6 py-2"
       >
-        View Projects
+        View Work
         <svg
-          class="w-5 h-5 ml-2 transition-transform transform group-hover:translate-x-1"
+          class="w-5 h-5 ml-2 transform transition duration-300 group-hover:rotate-90 group-active:rotate-90 group-hover:translate-x-1"
           fill="none"
           stroke="currentColor"
           stroke-width="2"
@@ -102,8 +139,8 @@
     </section>
 
     <!-- About Section -->
-    <section id="about" class="py-20" data-aos="fade-up">
-      <div name="about" class="w-full h-screen">
+    <section id="about" class="py-20 scroll-mt-20" data-aos="fade-up">
+      <div name="about" class="w-full h-screen bg-gray-900">
         <div class="flex flex-col justify-center items-center w-full h-full">
           <div class="max-w-[1000px] w-full grid grid-cols-2 gap-8">
             <div class="sm:text-right pb-8 pl-4">
@@ -133,7 +170,7 @@
     <!-- Projects Section -->
     <section id="projects" class="py-20" data-aos>
       <div class="max-w-6xl mx-auto px-4">
-        <h2 class="text-3xl font-bold text-center mb-10">Projects</h2>
+        <h2 class="text-3xl font-bold text-center mb-10">Portfolio</h2>
         <div class="grid md:grid-cols-3 gap-8">
           <div class="group overflow-hidden rounded-lg shadow-lg bg-gray-800">
             <div class="relative">
@@ -170,31 +207,6 @@
           <div class="group overflow-hidden rounded-lg shadow-lg bg-gray-800">
             <div class="relative">
               <img
-                src="assests/quiz.png"
-                alt="Quiz App"
-                class="w-full h-60 object-cover transform duration-500 group-hover:scale-110"
-              />
-              <div
-                class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-500 bg-gray-900 bg-opacity-50"
-              >
-                <button
-                  class="bg-transparent text-white px-4 py-2 rounded group-hover:bg-gray-600"
-                >
-                  <a href="" target="_blank"> Live Preview </a>
-                </button>
-              </div>
-            </div>
-            <div class="p-4">
-              <h3 class="text-lg font-semibold text-white">Quiz App</h3>
-              <p class="text-sm text-gray-300">
-                An interactive JavaScript-based coding quiz.
-              </p>
-            </div>
-          </div>
-
-          <div class="group overflow-hidden rounded-lg shadow-lg bg-gray-800">
-            <div class="relative">
-              <img
                 src="assests/e-commerce.png"
                 alt="E-Commerce UI"
                 class="w-full h-60 object-cover transform duration-500 group-hover:scale-110"
@@ -219,6 +231,38 @@
               <p class="text-sm text-gray-300">
                 A clean and working UI layout for an online shopping platform
                 developed in React JS.
+              </p>
+            </div>
+          </div>
+          <div class="group overflow-hidden rounded-lg shadow-lg bg-gray-800">
+            <div class="relative">
+              <img
+                src="assests/OG_portfolio.png"
+                alt="Quiz App"
+                class="w-full h-60 object-cover transform duration-500 group-hover:scale-110"
+              />
+              <div
+                class="absolute inset-0 flex justify-center items-center opacity-0 group-hover:opacity-100 transition duration-500 bg-gray-900 bg-opacity-50"
+              >
+                <button
+                  class="bg-transparent text-white px-4 py-2 rounded group-hover:bg-gray-600"
+                >
+                  <a
+                    href="https://ahmed-portfolio-wi3a.vercel.app/"
+                    target="_blank"
+                  >
+                    Live Preview
+                  </a>
+                </button>
+              </div>
+            </div>
+            <div class="p-4">
+              <h3 class="text-lg font-semibold text-white">
+                Portfolio Website
+              </h3>
+              <p class="text-sm text-gray-300">
+                A complete working portfolio to showcase all the skills and
+                projects.
               </p>
             </div>
           </div>
@@ -327,7 +371,7 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-center py-6 bg-gray-900">
+    <footer class="text-center py-4 bg-gray-800" data-aos="fade-in">
       <p class="text-gray-400">&copy; 2025 Ahmed. All rights reserved.</p>
     </footer>
 
@@ -349,5 +393,20 @@
         el.style.transform = "translateY(60px)";
       });
     </script>
+    <!-- Back to Top Button -->
+    <button
+      x-data="{ showTopBtn: false }"
+      x-show="showTopBtn"
+      x-init="
+  window.addEventListener('scroll', () => {
+    showTopBtn = window.scrollY > 300;
+  });
+"
+      @click="window.scrollTo({ top: 0, behavior: 'smooth' })"
+      class="fixed bottom-6 right-6 z-50 bg-indigo-600 hover:bg-indigo-700 text-white p-3 rounded-full shadow-lg transition-opacity duration-300"
+      title="Back to top"
+    >
+      ↑
+    </button>
   </body>
 </html>
